@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* =========================
+   First Slide
+========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+    font-family:'Poppins', sans-serif;
+}
+
+/* BODY BACKGROUND (more modern soft gradient) */
+body{
+    background:linear-gradient(135deg,#f4f7fc,#eaf2ff);
+    color:#1e293b;
+    line-height:1.6;
+    overflow-x:hidden;
+}
+
+/* Smooth text rendering */
+html{
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
+/* Better section spacing consistency */
+section{
+    padding:90px 8%;
+}
+
+/* Titles (global style) */
+.title{
+    font-size:40px;
+    font-weight:700;
+    color:#0f172a;
+    text-align:center;
+    margin-bottom:50px;
+    position:relative;
+}
+
+/* animated underline */
+.title::after{
+    content:"";
+    width:80px;
+    height:4px;
+    background:linear-gradient(90deg,#2563eb,#38bdf8);
+    display:block;
+    margin:12px auto 0;
+    border-radius:10px;
+}
+
+/* smooth links */
+a{
+    transition:.3s ease;
+}
+
+/* selection color */
+::selection{
+    background:#2563eb;
+    color:white;
+}
+
+
+/* NAV */
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:#0f172a;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    z-index:1000;
+}
+
+.logo{
+    color:#38bdf8;
+    font-size:28px;
+    font-weight:700;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:25px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+}
+
+nav ul li a:hover{
+    color:#38bdf8;
+}
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    margin-top:25px;
+    flex-wrap:wrap;
+}
+.btn{
+    display:inline-block;
+    padding:14px 30px;
+    background:#38bdf8;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    transition:.3s ease;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 20px rgba(0,0,0,.2);
+}
+
+.resume-btn{
+    background:#0f172a;
+    border:2px solid #38bdf8;
+}
+
+/* About */
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:100px 8%;
+    background:linear-gradient(135deg,#0f172a,#1e3a8a);
+}
+
+.hero-text h3{
+    color:#38bdf8;
+}
+
+.hero-text h1{
+    font-size:55px;
+    color:white;
+}
+
+.hero-text span{
+    color:#38bdf8;
+}
+
+.hero-text p{
+    color:#dbeafe;
+    margin:20px 0;
+    line-height:1.8;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 30px;
+    background:#38bdf8;
+    color:white;
+    border-radius:30px;
+    text-decoration:none;
+}
+.hero-image{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.hero-image img{
+    width:400px;
+    height:550px;
+    object-fit:cover;
+    border-radius:100%;
+    border:2px solid white;
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+    transition:0.4s ease;
+}
+
+/* hover effect */
+.hero-image img:hover{
+    transform:translateY(-10px) scale(1.03);
+    box-shadow:0 20px 50px rgba(0,0,0,.45);
+}
+
+/* SECTIONS */
+section{
+    padding:90px 8%;
+}
+
+.title{
+    text-align:center;
+    font-size:38px;
+    margin-bottom:40px;
+}
+
+#about{
+    padding:100px 8%;
+    background:linear-gradient(135deg,#f4f7fc,#eaf2ff);
+    text-align:center;
+}
+
+/* Title */
+#about .title{
+    font-size:40px;
+    color:#0f172a;
+    margin-bottom:50px;
+    position:relative;
+}
+
+/* underline accent */
+#about .title::after{
+    content:"";
+    width:70px;
+    height:4px;
+    background:#2563eb;
+    display:block;
+    margin:10px auto 0;
+    border-radius:10px;
+}
+
+/* About text box (new modern style) */
+#about p{
+    max-width:900px;
+    margin:auto;
+    font-size:18px;
+    color:#334155;
+    background:rgba(255,255,255,0.8);
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 20px 40px rgba(0,0,0,.08);
+    backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,.6);
+    transition:.4s ease;
+    text-align:justify;
+    line-height:1.9;
+    font-size:18px;
+}
+/* ABOUT SECTION */
+
+.about-container{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:50px;
+    max-width:1200px;
+    margin:auto;
+    margin-top:40px;
+    flex-wrap:wrap;
+}
+
+.about-image img{
+    width:450px;
+    height:590px;
+    object-fit:cover;
+    border-radius:20px;
+    border:4px solid#0c0c0c;
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+    transition:0.3s ease;
+}
+
+.about-image img:hover{
+    transform:scale(1.03);
+    box-shadow:0 20px 45px rgba(0,0,0,.25);
+}
+
+.about-content{
+    flex:1;
+    min-width:300px;
+}
+
+.about-content p{
+    text-align:justify;
+    line-height:1.9;
+    font-size:17px;
+    color:#334155;
+}
+
+/* hover effect */
+#about p:hover{
+    transform:scale(1.02);
+    box-shadow:0 25px 50px rgba(0,0,0,.12);
+}
+/* =========================
+   PROJECTS SECTION
+========================= */
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.card{
+    background:linear-gradient(145deg,#ffffff,#f8fafc);
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.4s ease;
+    position:relative;
+    overflow:hidden;
+}
+
+/* top accent line */
+.card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:4px;
+    background:linear-gradient(90deg,#2563eb,#38bdf8);
+}
+
+/* hover effect */
+.card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 20px 40px rgba(0,0,0,.12);
+}
+
+/* project title */
+.card h3{
+    color:#0f172a;
+    margin-bottom:10px;
+}
+
+/* project text */
+.card p{
+    color:#64748b;
+    line-height:1.7;
+    font-size:15px;
+}
+.view-btn{
+    display:inline-block;
+    margin-top:10px;
+    padding:10px 18px;
+    background:linear-gradient(135deg,#2563eb,#38bdf8);
+    color:white;
+    text-decoration:none;
+    border-radius:20px;
+    font-size:14px;
+    font-weight:500;
+    transition:0.3s ease;
+    box-shadow:0 8px 20px rgba(37,99,235,.25);
+}
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:cover; /* KEY FIX */
+    border-radius:12px;
+    margin-bottom:12px;
+    transition:0.3s ease;
+}
+
+/* optional hover zoom */
+.card:hover img{
+    transform:scale(1.05);
+}
+
+/* hover effect */
+.view-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 30px rgba(37,99,235,.35);
+    background:linear-gradient(135deg,#1d4ed8,#0ea5e9);
+}
+/* =========================
+   SKILLS SECTION
+========================= */
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+    max-width:900px;
+    margin:auto;
+}
+
+.skills span{
+    background:linear-gradient(135deg,#2563eb,#38bdf8);
+    color:white;
+    padding:12px 20px;
+    border-radius:30px;
+    font-weight:500;
+    font-size:14px;
+    letter-spacing:.5px;
+    box-shadow:0 8px 20px rgba(37,99,235,.25);
+    transition:.3s ease;
+    cursor:default;
+    position:relative;
+    overflow:hidden;
+}
+
+/* hover lift */
+.skills span:hover{
+    transform:translateY(-6px) scale(1.05);
+    box-shadow:0 15px 30px rgba(37,99,235,.35);
+}
+
+/* shine animation */
+.skills span::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:100%;
+    background:rgba(255,255,255,.2);
+    transform:skewX(-20deg);
+}
+
+.skills span:hover::after{
+    left:120%;
+    transition:.6s;
+}
+/* Hover effect */
+.skills span:hover{
+    transform:translateY(-5px) scale(1.05);
+    box-shadow:0 10px 25px rgba(37,99,235,.4);
+}
+
+/* Optional: soft glow animation */
+.skills span{
+    position:relative;
+    overflow:hidden;
+}
+
+.skills span::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:100%;
+    background:rgba(255,255,255,.2);
+    transform:skewX(-20deg);
+}
+
+.skills span:hover::after{
+    left:120%;
+    transition:.6s;
+}
+
+.certificates{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.cert{
+    background:#ffffff;
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s ease;
+    position:relative;
+    overflow:hidden;
+}
+
+/* Hover lift effect */
+.cert:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+/* Image styling */
+.cert img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:12px;
+    margin-bottom:12px;
+    transition:.4s ease;
+}
+
+/* Zoom image on hover */
+.cert:hover img{
+    transform:scale(1.05);
+}
+
+/* Title */
+.cert h3{
+    font-size:18px;
+    margin-bottom:8px;
+    color:#0f172a;
+}
+
+/* Description */
+.cert p{
+    font-size:14px;
+    color:#64748b;
+    line-height:1.5;
+}
+
+/* Subtle glow border effect */
+.cert::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:3px;
+    background:linear-gradient(90deg,#2563eb,#38bdf8);
+}
+
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:cover; /* KEY FIX */
+    border-radius:12px;
+    margin-bottom:12px;
+    transition:0.3s ease;
+}
+.cert{
+    text-align:center;
+}
+
+.cert p{
+    text-align:justify;
+    line-height:1.7;
+    color:#64748b;
+    margin-top:10px;
+}
+
+/* optional hover zoom */
+.card:hover img{
+    transform:scale(1.05);
+}
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
+form{
+    max-width:650px;
+    margin:auto;
+    background:#ffffff;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+    transition:.3s ease;
+}
+
+/* form hover effect */
+form:hover{
+    transform:translateY(-5px);
+    box-shadow:0 20px 45px rgba(0,0,0,.12);
+}
+
+/* inputs */
+input, textarea{
+    width:100%;
+    padding:14px;
+    margin-bottom:15px;
+    border:1px solid #e2e8f0;
+    border-radius:10px;
+    outline:none;
+    font-size:15px;
+    transition:.3s ease;
+    background:#f8fafc;
+}
+
+/* focus effect */
+input:focus, textarea:focus{
+    border-color:#2563eb;
+    background:white;
+    box-shadow:0 0 0 3px rgba(37,99,235,.15);
+}
+
+/* textarea */
+textarea{
+    min-height:160px;
+    resize:none;
+}
+
+/* button */
+button{
+    background:linear-gradient(135deg,#2563eb,#38bdf8);
+    color:white;
+    padding:14px 28px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:500;
+    transition:.3s ease;
+    box-shadow:0 8px 20px rgba(37,99,235,.25);
+}
+
+/* button hover */
+button:hover{
+    transform:translateY(-4px);
+    box-shadow:0 15px 30px rgba(37,99,235,.35);
+}
+.social-contact{
+    text-align:center;
+    margin-top:25px;
+    line-height:2;
+}
+
+.social-contact a{
+    color:#2563eb;
+    text-decoration:none;
+    font-weight:500;
+}
+
+.social-contact a:hover{
+    text-decoration:underline;
+}
+
+/* =========================
+   FOOTER SECTION
+========================= */
+
+footer{
+    background:linear-gradient(135deg,#0f172a,#1e3a8a);
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+    position:relative;
+    margin-top:60px;
+}
+
+/* top accent line */
+footer::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:4px;
+    background:linear-gradient(90deg,#38bdf8,#2563eb);
+}
+
+/* footer text */
+footer p{
+    margin:0;
+    font-size:15px;
+    opacity:.9;
+    letter-spacing:.5px;
+}
+/* Subtle top border glow */
+footer::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:3px;
+    background:linear-gradient(90deg,#38bdf8,#2563eb);
+}
+
+/* Footer text */
+footer p{
+    font-size:15px;
+    letter-spacing:.5px;
+    opacity:.9;
+    margin:0;
+}
+
+/* Optional hover effect (if links exist later) */
+footer a{
+    color:#38bdf8;
+    text-decoration:none;
+    transition:.3s;
+}
+
+footer a:hover{
+    color:white;
+}
+
+nav ul li a.active{
+    color:#38bdf8;
+    font-weight:600;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">Snoopi Dev</div>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#achievements">Achievements</a></li>
+<li><a href="#certificates">Certificates</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+
+<div class="hero-text">
+    <h3>Hello, I'm</h3>
+    <h1>Kent <span>Demigaya</span></h1>
+
+    <p>
+        I am a Bachelor of Science in Information Systems student passionate about technology, information systems, and basic UI/UX design.<br>
+        I strive to turn ideas into practical and user-friendly digital solutions while continuously learning and growing in the field.
+    </p>
+
+    <div class="hero-buttons">
+        <a href="#projects" class="btn">View Projects</a>
+
+        <a href="c:\Users\nopah\OneDrive\Desktop\OJT\Curriculum Vitae.pdf" class="btn resume-btn" download>
+            View CV
+        </a>
+    </div>
+</div>
+
+<div class="hero-image">
+    <img src="c:\Users\nopah\Downloads\Kent (2).jpg" alt="Profile Picture">
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <h2 class="title">About Me</h2>
+
+    <div class="about-container">
+
+        <div class="about-image">
+            <img src="c:\Users\nopah\Downloads\Snoopyy.jpg" alt="Kent Demigaya">
+        </div>
+
+        <div class="about-content">
+            <p>
+                I am an Information Systems student passionate about developing practical systems and web applications that solve real-world problems. I enjoy turning ideas into functional solutions that improve efficiency, organization, and user experience.
+
+                <br><br>
+
+                I am continuously building my skills in programming, system analysis, database management, and web development through academic projects and hands-on learning experiences. I am eager to expand my knowledge and apply it to real-world challenges.
+
+                <br><br>
+
+                Outside of academics, I am interested in business and long-term growth opportunities, aiming to use my technical skills to create innovative and sustainable solutions. I am motivated to learn, adapt, and continuously improve while contributing positively to any organization or team I become part of.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+<h2 class="title">My Projects</h2>
+
+<div class="projects">
+
+<div class="card">
+    <img src="c:\Users\nopah\OneDrive\Pictures\Screenshots\Screenshot 2026-06-07 112305.png" alt="H2GO Project">
+
+    <h3>H2GO</h3>
+
+    <p>
+        Capstone project: A web-based water ordering and delivery system that streamlines customer orders, delivery scheduling, and transaction management.
+    </p>
+
+    <a href="https://h2go.test/" target="_blank" class="view-btn">
+        View Project
+    </a>
+</div>
+
+<div class="card">
+<img src="c:\Users\nopah\OneDrive\Pictures\Screenshots\Screenshot 2026-06-07 123401.png" alt="H2GO Project">
+
+    <h3>DNSC WANDERS</h3>
+
+    <p>
+        This project is a web-based HTML portfolio that showcases academic background, projects, skills, certificates, and personal information, designed to present a professional online profile using modern web design principles.
+    </p>
+
+    <a href="c:\Users\nopah\OneDrive\Desktop\DNSC WANDERS\Dnsc Website.html" target="_blank" class="view-btn">
+        View Project
+    </a>
+</div>
+
+
+</div>
+</section>
+<!-- SKILLS -->
+<section id="skills">
+<h2 class="title">Skills</h2>
+
+<div class="skills">
+<span>HTML</span>
+<span>CSS</span>
+<span>ICT Skills</span>
+<span>Basic Communication Skills</span>
+<span>Basic UI/UX Design</span>
+<span>Canva Design</span>
+<span>Basic Figma Skills</span>
+<span>ICT Skills</span>
+</div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+    <h2 class="title">Achievements</h2>
+
+    <div class="certificates">
+
+        <div class="cert">
+            <img src="c:\Users\nopah\Downloads\Kali FD.jpg" alt="Folk Dance Achievement">
+
+            <h3>Kalibulung Folk Dance Competition</h3>
+            <p>2nd Runner-Up representing the Institute of Computing.</p>
+            <a href="c:\Users\nopah\Downloads\Kali FD.jpg" target="_blank" class="view-btn">
+            View Achievement</a>
+        </div>
+
+        <div class="cert">
+            <img src="c:\Users\nopah\Downloads\PSITS Folk.jpg" alt="Folk Dance Achievement">
+
+            <h3>PSITS Folk Dance Competion</h3>
+            <p>Silver Medalist representing Davao del Norte State College in the Philippine Society of Information Technology Students (PSITS). </p>
+            <a href="c:\Users\nopah\Downloads\PSITS Folk.jpg" target="_blank" class="view-btn">
+        View Achievement
+    </a>
+        </div>
+
+        <div class="cert">
+            <img src="c:\Users\nopah\Downloads\Sundayag.jpg" alt="Capstone Achievement">
+
+            <h3>Project Exhibit 2026</h3>
+            <p>We are honored to present our capstone project at the Project Exhibit, showcasing the knowledge, skills, and dedication we have developed throughout our academic journey..</p>
+            <a href="c:\Users\nopah\Downloads\Sundayag.jpg" target="_blank" class="view-btn">
+        View Achievement
+    </a>
+        </div>
+
+    </div>
+</section>
+<!-- CERTIFICATES -->
+<section id="certificates">
+<h2 class="title">Certificates</h2>
+
+<div class="certificates">
+
+<div class="cert">
+<img src="c:\Users\nopah\Downloads\Deployment.jpg" alt="Certificate">
+<h3>Capstone Deployment Certificate</h3>
+<p>Completed 6 Weeks of Deployment.</p>
+<a href="c:\Users\nopah\Downloads\Deployment.jpg" target="_blank" class="view-btn">
+        View Certificate
+    </a>
+</div>
+
+<div class="cert">
+<img src="c:\Users\nopah\Downloads\OJT CERT.jpg" alt="Certificate">
+<h3>On-The-Job Training Certificate</h3>
+<p>On the Job Training .</p>
+<a href="c:\Users\nopah\Downloads\OJT CERT.jpg" target="_blank" class="view-btn">
+        View Certificate
+    </a>
+</div>
+
+<div class="cert">
+<img src="c:\Users\nopah\OneDrive\Pictures\Screenshots\Screenshot 2026-06-07 121707.png" alt="Certificate">
+<h3>Python Essentials Certificate</h3>
+<p>Python Essentials Training.</p>
+<a href="c:\Users\nopah\OneDrive\Pictures\Screenshots\Screenshot 2026-06-07 121707.png" target="_blank" class="view-btn">
+        View Certificate
+    </a>
+</div>
+
+<div class="cert">
+<img src="c:\Users\nopah\Downloads\Folkdance.jpg" alt="Certificate">
+<h3>PSITS Folk Dance Certificate</h3>
+<p>1st Runner Up Folk Dance Competition </p>
+<a href="c:\Users\nopah\Downloads\Folkdance.jpg" target="_blank" class="view-btn">
+        View Certificate
+    </a>
+</div>
+
+<div class="cert">
+<img src="c:\Users\nopah\Downloads\Project Exhibit 2026.jpg" alt="Certificate">
+<h3>Project Exhibit 2026 Certificate</h3>
+<p>Presenting Capstone, Project Showcase day.</p>
+<a href="c:\Users\nopah\Downloads\Project Exhibit 2026.jpg" target="_blank" class="view-btn">
+        View Certificate
+    </a>
+</div>
+
+</div>
+</section>
+
+
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2 class="title">Contact Me</h2>
+
+    <form>
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <textarea rows="5" placeholder="Message"></textarea>
+        <button type="submit">Send</button>
+    </form>
+
+    <!-- SOCIAL CONTACTS -->
+<div class="social-contact">
+
+    <p>
+        📧 Gmail:
+        <a href="mailto:nopah661@gmail.com">nopah661@gmail.com</a>
+    </p>
+
+    <p>
+        📘 Facebook:
+        <a href="https://www.facebook.com/kent.demigaya.2025" target="_blank">  Kent Demigaya
+        </a>
+    </p>
+
+</div>
+</section>
+
+<footer>
+    <p>© 2026 Kent Demigaya | Portfolio</p>
+</footer>
+
+</body>
+</html>
+
+<script>
+/* =========================
+   SMOOTH NAV HIGHLIGHT
+========================= */
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav ul li a");
+
+window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        const sectionHeight = section.clientHeight;
+
+        if (pageYOffset >= sectionTop) {
+            current = section.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+        }
+    });
+});
+
+
+/* =========================
+   SMOOTH SCROLL CLICK FIX
+========================= */
+
+navLinks.forEach(link => {
+    link.addEventListener("click", function(e){
+        e.preventDefault();
+
+        const target = document.querySelector(this.getAttribute("href"));
+
+        window.scrollTo({
+            top: target.offsetTop - 80,
+            behavior: "smooth"
+        });
+    });
+});
+
+
+/* =========================
+   FORM ALERT (CONTACT)
+========================= */
+
+const form = document.querySelector("form");
+
+form.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    alert("Message sent successfully! I will get back to you soon.");
+
+    form.reset();
+});
+</script>
